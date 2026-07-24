@@ -1,9 +1,20 @@
-import {
-  to = oci_core_vcn.minha_rede_manual
-  id = "ocid1.vcn.oc1.sa-vinhedo-1.amaaaaaav23halaaxrc3qtvpgcultyci6ia4wngeiapsha362g4kiutx72vq" # Pegue esse OCID lá no painel da OCI
+# --- IMPORTAÇÃO DAS VCNs ---
+import { 
+  to = oci_core_vcn.desenv 
+  id = "ocid1.vcn.oc1.sa-vinhedo-1.amaaaaaav23halaaxrc3qtvpgcultyci6ia4wngeiapsha362g4kiutx72vq"
 }
 
-resource "oci_core_vcn" "minha_rede_manual" {
-  compartment_id = "ocid1.compartment.oc1..aaaaaaaa6kwhdgolutn26xl3nlkzyafawlr6odmuco5yp3bnegkb64wy3pnq"
-  # Você pode deixar vazio no início, o Terraform Cloud vai te ajudar
+import { 
+  to = oci_core_vcn.homol 
+  id = "ocid1.vcn.oc1.sa-vinhedo-1.amaaaaaav23halaaepb6pxscox4z2flq3uuzixxbfgn5x67z5nnvg3fbu5lq"
+}
+
+import { 
+  to = oci_core_vcn.prod 
+  id = "ocid1.vcn.oc1.sa-vinhedo-1.amaaaaaav23halaa4kpgzxzjoukpxuhcw4zwhl7x423z7eb3yhrrxebtlqta"
+}
+
+import { 
+  to = oci_core_vcn.shared 
+  id = "ocid1.vcn.oc1.sa-vinhedo-1.amaaaaaav23halaae5gw6in7piqmufwpnmh43iziwjttwaay3fp257hraycq"
 }
