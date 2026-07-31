@@ -72,3 +72,9 @@ resource "oci_identity_compartment" "sas_peoplesoft_dsv" {
   name           = "sas-peoplesoft-dsv"
   description    = "Comparment onde serão organizados os recursos aplicacionais do peoplesoft de desenvolvimento"
 }
+
+resource "oci_identity_compartment" "sas_peoplesoft_dmo" {
+  compartment_id = oci_identity_compartment.workload.id
+  name           = "sas-peoplesoft-dmo"
+  description    = "Comparment onde serão organizados os recursos aplicacionais do peoplesoft de DMO"
+}
