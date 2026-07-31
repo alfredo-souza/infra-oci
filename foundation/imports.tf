@@ -42,6 +42,22 @@ import {
   id = "ocid1.vcn.oc1.sa-vinhedo-1.amaaaaaav23halaaxrc3qtvpgcultyci6ia4wngeiapsha362g4kiutx72vq"
 }
 
+import { 
+  to = oci_core_vcn.homol 
+  id = "ocid1.vcn.oc1.sa-vinhedo-1.amaaaaaav23halaaepb6pxscox4z2flq3uuzixxbfgn5x67z5nnvg3fbu5lq"
+}
+
+import { 
+  to = oci_core_vcn.prod 
+  id = "ocid1.vcn.oc1.sa-vinhedo-1.amaaaaaav23halaa4kpgzxzjoukpxuhcw4zwhl7x423z7eb3yhrrxebtlqta"
+}
+
+import { 
+  to = oci_core_vcn.shared 
+  id = "ocid1.vcn.oc1.sa-vinhedo-1.amaaaaaav23halaae5gw6in7piqmufwpnmh43iziwjttwaay3fp257hraycq"
+}
+
+
 # ==========================================
 # IMPORTAÇÃO: SUBNETS, RTs e SLs (DESENV)
 # ==========================================
@@ -76,4 +92,161 @@ import {
 import { 
   to = oci_core_security_list.desenv_default 
   id = "ocid1.securitylist.oc1.sa-vinhedo-1.aaaaaaaa2dkhukwx3qowhxqwwl24txr5pmmwjaaikm5j4gkzes3hddwfipqa"
+}
+
+
+# ==========================================
+# IMPORTAÇÃO: SUBNETS, RTs e SLs (HOMOL)
+# ==========================================
+import { 
+  to = oci_core_subnet.homol_exa_backup 
+  id = "ocid1.subnet.oc1.sa-vinhedo-1.aaaaaaaaoc7b5obvepk5e7rjccywbwcph6ojnshbac2td54s36iczierwwka"
+}
+import { 
+  to = oci_core_subnet.homol_exa_client 
+  id = "ocid1.subnet.oc1.sa-vinhedo-1.aaaaaaaaiefnqs6k6cc4vzmu7djqeoop2idgrurv4zngnj3lg6gtsuriuqrq"
+}
+import { 
+  to = oci_core_subnet.homol_pub 
+  id = "ocid1.subnet.oc1.sa-vinhedo-1.aaaaaaaanqodafgl65b4k5ydob7sb4ev3jwpfa4m7d22u3uxhpjujpcg5dqa"
+}
+import { 
+  to = oci_core_subnet.homol_priv 
+  id = "ocid1.subnet.oc1.sa-vinhedo-1.aaaaaaaad3rouk5dvqf4tqwesjzuammm4r6trjrv2b5wuvlz54bt6n3cnnia"
+}
+import { 
+  to = oci_core_route_table.homol_exa_backup 
+  id = "ocid1.routetable.oc1.sa-vinhedo-1.aaaaaaaajgek7jq6yz2fpotrhlc4zt5lfeb2ttywk2e6wiyqztfi3jvm2zga"
+}
+import { 
+  to = oci_core_route_table.homol_exa_client 
+  id = "ocid1.routetable.oc1.sa-vinhedo-1.aaaaaaaamgphti4jqckl3qnwefetfaxfnyp7bd5v24eqznneyo5zqso3utba"
+}
+import { 
+  to = oci_core_route_table.homol_pub 
+  id = "ocid1.routetable.oc1.sa-vinhedo-1.aaaaaaaathrsj5b3hsq6yizszawesd7ls3wjoqdsteueavk7sq5ruwzf2ova"
+}
+import { 
+  to = oci_core_route_table.homol_priv 
+  id = "ocid1.routetable.oc1.sa-vinhedo-1.aaaaaaaaivqj3xr4cnbyy5av4zk26nhu37ed74sufzuana7qjo5ut4leetqq"
+}
+import { 
+  to = oci_core_route_table.homol_default 
+  id = "ocid1.routetable.oc1.sa-vinhedo-1.aaaaaaaatrczkwvqmmerm437qikx54hvdrfokx7eztyyu37ngm2r235zubga"
+}
+import { 
+  to = oci_core_security_list.homol_priv 
+  id = "ocid1.securitylist.oc1.sa-vinhedo-1.aaaaaaaaamu7elmofev262l5hqn2h2b74m2lwmojqbwex3wbzbfzxruxtlia"
+}
+import { 
+  to = oci_core_security_list.homol_pub 
+  id = "ocid1.securitylist.oc1.sa-vinhedo-1.aaaaaaaaws6eoafitqzafcsrlnkpto537lpyfrcn66xoeuykq4a7ebpr5h5a"
+}
+import { 
+  to = oci_core_security_list.homol_exa_client 
+  id = "ocid1.securitylist.oc1.sa-vinhedo-1.aaaaaaaamkjay6uiqayaka2csig4pcogbejstfeixejrtf76uoo76bjmv4ca"
+}
+import { 
+  to = oci_core_security_list.homol_exa_backup 
+  id = "ocid1.securitylist.oc1.sa-vinhedo-1.aaaaaaaau4nj6aafpx7nrfwrgf3hifyvglctyvnuhv2zfhwpt4dthhvwnw7a"
+}
+import { 
+  to = oci_core_security_list.homol_default 
+  id = "ocid1.securitylist.oc1.sa-vinhedo-1.aaaaaaaafgjidcp4ubjy6nlpzs2lpxghz2lzyitu4fnd2hajf2riujjd2atq"
+}
+
+# ==========================================
+# IMPORTAÇÃO: SUBNETS, RTs e SLs (PROD)
+# ==========================================
+import { 
+  to = oci_core_subnet.prod_exa_client 
+  id = "ocid1.subnet.oc1.sa-vinhedo-1.aaaaaaaaufn4z2v74eq5ryyw2fzuyyyl27fgljglbakudcav4xwjbq2htzjq"
+}
+import { 
+  to = oci_core_subnet.prod_exa_backup 
+  id = "ocid1.subnet.oc1.sa-vinhedo-1.aaaaaaaaoib4pzrvtxmzuwsjj7zfcp3kge6nbguyn5tnyzr4pgfhjnkmg5vq"
+}
+import { 
+  to = oci_core_subnet.prod_pub 
+  id = "ocid1.subnet.oc1.sa-vinhedo-1.aaaaaaaahgppwybesnxi7yuoswu2w4wsn2mjbyygc7yzbwcoeiykz3gafddq"
+}
+import { 
+  to = oci_core_subnet.prod_priv 
+  id = "ocid1.subnet.oc1.sa-vinhedo-1.aaaaaaaapfibvvcld3zuodt5cvnzuczvb6iubchv4xi77tvfnuhkxrz4tw5q"
+}
+import { 
+  to = oci_core_route_table.prod_exa_backup 
+  id = "ocid1.routetable.oc1.sa-vinhedo-1.aaaaaaaai7cf2fkkmaz37p2k4lz4poxmhvawvdroanmgbanfx57ouvnbh65a"
+}
+import { 
+  to = oci_core_route_table.prod_exa_client 
+  id = "ocid1.routetable.oc1.sa-vinhedo-1.aaaaaaaazhpx6tdeomwe5pwns7w6qzm4p7nsw47xpvzopzspctg53vlbnaza"
+}
+import { 
+  to = oci_core_route_table.prod_pub 
+  id = "ocid1.routetable.oc1.sa-vinhedo-1.aaaaaaaabjixpeebcx664avpazyt3zjxu43zzqn2n6ngt33w227iceoja3wq"
+}
+import { 
+  to = oci_core_route_table.prod_priv 
+  id = "ocid1.routetable.oc1.sa-vinhedo-1.aaaaaaaamjsaldjhwybisskgeo5rih3ztcukdnjwagbr23pns4vzximqt62q"
+}
+import { 
+  to = oci_core_route_table.prod_default 
+  id = "ocid1.routetable.oc1.sa-vinhedo-1.aaaaaaaa2lsisrcnc3jsy7iomondh5ay7tyequ7a4qfchvxdz2jxazyng32a"
+}
+import { 
+  to = oci_core_security_list.prod_exa_backup 
+  id = "ocid1.securitylist.oc1.sa-vinhedo-1.aaaaaaaaj4vcnauhbiwihweqkn5a3yxbgnmwvrwtionu3bocpivuulf3weta"
+}
+import { 
+  to = oci_core_security_list.prod_exa_client 
+  id = "ocid1.securitylist.oc1.sa-vinhedo-1.aaaaaaaarrszqmfqa2ueu25pkn6cky67tt76m5x454rcicc6wqs3xrh37caq"
+}
+import { 
+  to = oci_core_security_list.prod_pub 
+  id = "ocid1.securitylist.oc1.sa-vinhedo-1.aaaaaaaahoikfasyvb4l5txqdob3qkkyt6k6oumsrk6cjq57cfgj6ytwfv2a"
+}
+import { 
+  to = oci_core_security_list.prod_priv 
+  id = "ocid1.securitylist.oc1.sa-vinhedo-1.aaaaaaaag7n65it2x7o6icp6snvti43mtmmbiht3vlu66xx5d5or75or5m6a"
+}
+import { 
+  to = oci_core_security_list.prod_default 
+  id = "ocid1.securitylist.oc1.sa-vinhedo-1.aaaaaaaa2njc52qcrl5vl22szwzcz3m5obrbgpcmf3rktsudljif4tdsqscq"
+}
+
+# ==========================================
+# IMPORTAÇÃO: SUBNETS, RTs e SLs (SHARED)
+# ==========================================
+import { 
+  to = oci_core_subnet.shared_pub 
+  id = "ocid1.subnet.oc1.sa-vinhedo-1.aaaaaaaatowvxsn3qfmmxbxelni26rsyroaprvmwh5qsloqna2ihoiinwj5a"
+}
+import { 
+  to = oci_core_subnet.shared_priv 
+  id = "ocid1.subnet.oc1.sa-vinhedo-1.aaaaaaaas3xhussmszto3iqbisenrfn6sdo5tfqt7sxhngjf2ddalof7ki2q"
+}
+import { 
+  to = oci_core_route_table.shared_pub 
+  id = "ocid1.routetable.oc1.sa-vinhedo-1.aaaaaaaadthn7bvzzlvdt3d35li7pm4qji66jyhjudyypajxcy7c4zzo7dbq"
+}
+import { 
+  to = oci_core_route_table.shared_priv 
+  id = "ocid1.routetable.oc1.sa-vinhedo-1.aaaaaaaaoyzhg5vsj2eosbtkvey7sm5jczn7qx2hy5h4o3fkxokv5grt3f7a"
+}
+import { 
+  to = oci_core_route_table.shared_default 
+  id = "ocid1.routetable.oc1.sa-vinhedo-1.aaaaaaaapgh42mkacklpwdxc464v2mtgfsclsqw6p3p2vwfyrl3xjcerppoa"
+}
+import { 
+  to = oci_core_security_list.shared_pub 
+  id = "ocid1.securitylist.oc1.sa-vinhedo-1.aaaaaaaajga7pfukvxmify5qlzvl3xtsnfimiqy4b52gah5cvvp56awp7nua"
+}
+import { 
+  to = oci_core_security_list.shared_priv 
+  id = "ocid1.securitylist.oc1.sa-vinhedo-1.aaaaaaaajaurnq4q7sjiyfb5hoi7fxfwy6ip3chmyo5qye663qpolrcmfysa"
+}
+import { 
+  to = oci_core_security_list.shared_default 
+  id = "ocid1.securitylist.oc1.sa-vinhedo-1.aaaaaaaakli5li56zdyunb37ny7mu3fv7h7mbcg6lcv6b5vncsianowzig5q"
 }
