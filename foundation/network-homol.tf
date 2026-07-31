@@ -19,8 +19,10 @@ resource "oci_core_subnet" "homol_pub" {
   prohibit_public_ip_on_vnic = false
   route_table_id             = oci_core_route_table.homol_pub.id
   
+  # Mantendo a default como solicitado e refletindo a OCI
   security_list_ids = [
-    oci_core_security_list.homol_pub.id
+    oci_core_security_list.homol_pub.id,
+    oci_core_security_list.homol_default.id
   ]
 }
 
@@ -33,8 +35,10 @@ resource "oci_core_subnet" "homol_priv" {
   prohibit_public_ip_on_vnic = true
   route_table_id             = oci_core_route_table.homol_priv.id
   
+  # Mantendo a default como solicitado e refletindo a OCI
   security_list_ids = [
-    oci_core_security_list.homol_priv.id
+    oci_core_security_list.homol_priv.id,
+    oci_core_security_list.homol_default.id
   ]
 }
 
@@ -47,6 +51,7 @@ resource "oci_core_subnet" "homol_exa_client" {
   prohibit_public_ip_on_vnic = true
   route_table_id             = oci_core_route_table.homol_exa_client.id
   
+  # Refletindo a OCI (Apenas específica)
   security_list_ids = [
     oci_core_security_list.homol_exa_client.id
   ]
@@ -61,6 +66,7 @@ resource "oci_core_subnet" "homol_exa_backup" {
   prohibit_public_ip_on_vnic = true
   route_table_id             = oci_core_route_table.homol_exa_backup.id
   
+  # Refletindo a OCI (Apenas específica)
   security_list_ids = [
     oci_core_security_list.homol_exa_backup.id
   ]
