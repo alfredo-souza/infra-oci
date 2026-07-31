@@ -44,7 +44,7 @@ import {
 
 import { 
   to = oci_core_vcn.homol 
-  id = "ocid1.vcn.oc1.sa-vinhedo-1.amaaaaaav23halaaepb6pxscox4z2Qlq3uuzixxbfgn5x67z5nnvg3fbu5lq"
+  id = "ocid1.vcn.oc1.sa-vinhedo-1.amaaaaaav23halaaepb6pxscox4z2flq3uuzixxbfgn5x67z5nnvg3fbu5lq"
 }
 
 import { 
