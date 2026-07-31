@@ -14,6 +14,7 @@ resource "oci_core_subnet" "desenv_pub" {
   compartment_id = oci_identity_compartment.network.id
   vcn_id         = oci_core_vcn.desenv.id
 }
+
 resource "oci_core_subnet" "desenv_priv" {
   compartment_id = oci_identity_compartment.network.id
   vcn_id         = oci_core_vcn.desenv.id
@@ -23,26 +24,48 @@ resource "oci_core_subnet" "desenv_priv" {
 resource "oci_core_route_table" "desenv_pub" {
   compartment_id = oci_identity_compartment.network.id
   vcn_id         = oci_core_vcn.desenv.id
+  lifecycle {
+    ignore_changes = [route_rules, defined_tags, freeform_tags]
+  }
 }
+
 resource "oci_core_route_table" "desenv_priv" {
   compartment_id = oci_identity_compartment.network.id
   vcn_id         = oci_core_vcn.desenv.id
+  lifecycle {
+    ignore_changes = [route_rules, defined_tags, freeform_tags]
+  }
 }
+
 resource "oci_core_route_table" "desenv_default" {
   compartment_id = oci_identity_compartment.network.id
   vcn_id         = oci_core_vcn.desenv.id
+  lifecycle {
+    ignore_changes = [route_rules, defined_tags, freeform_tags]
+  }
 }
 
 # --- SECURITY LISTS ---
 resource "oci_core_security_list" "desenv_priv" {
   compartment_id = oci_identity_compartment.network.id
   vcn_id         = oci_core_vcn.desenv.id
+  lifecycle {
+    ignore_changes = [ingress_security_rules, egress_security_rules, defined_tags, freeform_tags]
+  }
 }
+
 resource "oci_core_security_list" "desenv_pub" {
   compartment_id = oci_identity_compartment.network.id
   vcn_id         = oci_core_vcn.desenv.id
+  lifecycle {
+    ignore_changes = [ingress_security_rules, egress_security_rules, defined_tags, freeform_tags]
+  }
 }
+
 resource "oci_core_security_list" "desenv_default" {
   compartment_id = oci_identity_compartment.network.id
   vcn_id         = oci_core_vcn.desenv.id
+  lifecycle {
+    ignore_changes = [ingress_security_rules, egress_security_rules, defined_tags, freeform_tags]
+  }
 }
