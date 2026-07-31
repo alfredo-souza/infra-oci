@@ -54,3 +54,21 @@ resource "oci_identity_compartment" "sas_exadata_stg" {
   name           = "sas-exadata-stg"
   description    = "Comparment onde serão organizados os recursos aplicacionais do exadata de stage"
 }
+
+resource "oci_identity_compartment" "sas_peoplesoft-prd" {
+  compartment_id = oci_identity_compartment.workload.id
+  name           = "sas-peoplesoft-prd"
+  description    = "Comparment onde serão organizados os recursos aplicacionais do peoplesoft de produção"
+}
+
+resource "oci_identity_compartment" "sas_peoplesoft-hml" {
+  compartment_id = oci_identity_compartment.workload.id
+  name           = "sas-peoplesoft-hml"
+  description    = "Comparment onde serão organizados os recursos aplicacionais do peoplesoft de homologação"
+}
+
+resource "oci_identity_compartment" "sas_peoplesoft-dsv" {
+  compartment_id = oci_identity_compartment.workload.id
+  name           = "sas-peoplesoft-dsv"
+  description    = "Comparment onde serão organizados os recursos aplicacionais do peoplesoft de desenvolvimento"
+}
