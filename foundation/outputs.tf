@@ -12,9 +12,9 @@ output "compartments" {
     shared              = oci_identity_compartment.shared.id
     sas_exadata_prd     = oci_identity_compartment.sas_exadata_prd.id
     sas_exadata_stg     = oci_identity_compartment.sas_exadata_stg.id
-    sas_peoplesoft_prd  = oci_identity_compartment.sas-peoplesoft-prd.id
-    sas_peoplesoft_hml  = oci_identity_compartment.sas-peoplesoft-hml.id
-    sas_peoplesoft_dsv  = oci_identity_compartment.sas-peoplesoft-dsv.id
+    sas_peoplesoft_prd  = oci_identity_compartment.sas_peoplesoft_prd.id
+    sas_peoplesoft_hml  = oci_identity_compartment.sas_peoplesoft_hml.id
+    sas_peoplesoft_dsv  = oci_identity_compartment.sas_peoplesoft_dsv.id
   }
 }
 
