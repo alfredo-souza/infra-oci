@@ -17,14 +17,10 @@ resource "oci_core_subnet" "homol_pub" {
   display_name               = "sub-sa-vinhedo-1-homol-pub"
   dns_label                  = "subhomolpub"
   prohibit_public_ip_on_vnic = false
-  
-  # Roteamento já está correto na OCI
   route_table_id             = oci_core_route_table.homol_pub.id
   
-  # Adicionada a Default Security List para manter igual à OCI
   security_list_ids = [
-    oci_core_security_list.homol_pub.id,
-    oci_core_security_list.homol_default.id
+    oci_core_security_list.homol_pub.id
   ]
 }
 
@@ -35,14 +31,10 @@ resource "oci_core_subnet" "homol_priv" {
   display_name               = "sub-sa-vinhedo-1-homol-priv"
   dns_label                  = "subhomolpriv"
   prohibit_public_ip_on_vnic = true
-  
-  # Roteamento já está correto na OCI
   route_table_id             = oci_core_route_table.homol_priv.id
   
-  # Adicionada a Default Security List para manter igual à OCI
   security_list_ids = [
-    oci_core_security_list.homol_priv.id,
-    oci_core_security_list.homol_default.id
+    oci_core_security_list.homol_priv.id
   ]
 }
 
@@ -56,8 +48,7 @@ resource "oci_core_subnet" "homol_exa_client" {
   route_table_id             = oci_core_route_table.homol_exa_client.id
   
   security_list_ids = [
-    oci_core_security_list.homol_exa_client.id,
-    oci_core_security_list.homol_default.id
+    oci_core_security_list.homol_exa_client.id
   ]
 }
 
@@ -71,8 +62,7 @@ resource "oci_core_subnet" "homol_exa_backup" {
   route_table_id             = oci_core_route_table.homol_exa_backup.id
   
   security_list_ids = [
-    oci_core_security_list.homol_exa_backup.id,
-    oci_core_security_list.homol_default.id
+    oci_core_security_list.homol_exa_backup.id
   ]
 }
 
