@@ -18,7 +18,12 @@ resource "oci_core_subnet" "prod_pub" {
   dns_label                  = "subprodpub"
   prohibit_public_ip_on_vnic = false
   route_table_id             = oci_core_route_table.prod_pub.id
-  security_list_ids          = [oci_core_security_list.prod_pub.id]
+  
+  # Mantendo a lista Default conforme a OCI
+  security_list_ids = [
+    oci_core_security_list.prod_pub.id,
+    oci_core_security_list.prod_default.id
+  ]
 }
 
 resource "oci_core_subnet" "prod_priv" {
@@ -29,7 +34,12 @@ resource "oci_core_subnet" "prod_priv" {
   dns_label                  = "subprodpriv"
   prohibit_public_ip_on_vnic = true
   route_table_id             = oci_core_route_table.prod_priv.id
-  security_list_ids          = [oci_core_security_list.prod_priv.id]
+  
+  # Mantendo a lista Default conforme a OCI
+  security_list_ids = [
+    oci_core_security_list.prod_priv.id,
+    oci_core_security_list.prod_default.id
+  ]
 }
 
 resource "oci_core_subnet" "prod_exa_client" {
@@ -40,7 +50,11 @@ resource "oci_core_subnet" "prod_exa_client" {
   dns_label                  = "subprodexaclt"
   prohibit_public_ip_on_vnic = true
   route_table_id             = oci_core_route_table.prod_exa_client.id
-  security_list_ids          = [oci_core_security_list.prod_exa_client.id]
+  
+  # Exadata já está OK na OCI (apenas a lista específica)
+  security_list_ids = [
+    oci_core_security_list.prod_exa_client.id
+  ]
 }
 
 resource "oci_core_subnet" "prod_exa_backup" {
@@ -51,7 +65,11 @@ resource "oci_core_subnet" "prod_exa_backup" {
   dns_label                  = "subprodexabkup"
   prohibit_public_ip_on_vnic = true
   route_table_id             = oci_core_route_table.prod_exa_backup.id
-  security_list_ids          = [oci_core_security_list.prod_exa_backup.id]
+  
+  # Exadata já está OK na OCI (apenas a lista específica)
+  security_list_ids = [
+    oci_core_security_list.prod_exa_backup.id
+  ]
 }
 
 # --- ROUTE TABLES ---

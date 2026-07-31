@@ -18,7 +18,12 @@ resource "oci_core_subnet" "shared_pub" {
   dns_label                  = "subsharedpub"
   prohibit_public_ip_on_vnic = false
   route_table_id             = oci_core_route_table.shared_pub.id
-  security_list_ids          = [oci_core_security_list.shared_pub.id]
+  
+  # Mantendo a lista Default conforme a OCI
+  security_list_ids = [
+    oci_core_security_list.shared_pub.id,
+    oci_core_security_list.shared_default.id
+  ]
 }
 
 resource "oci_core_subnet" "shared_priv" {
@@ -29,7 +34,12 @@ resource "oci_core_subnet" "shared_priv" {
   dns_label                  = "subsharedpriv"
   prohibit_public_ip_on_vnic = true
   route_table_id             = oci_core_route_table.shared_priv.id
-  security_list_ids          = [oci_core_security_list.shared_priv.id]
+  
+  # Mantendo a lista Default conforme a OCI
+  security_list_ids = [
+    oci_core_security_list.shared_priv.id,
+    oci_core_security_list.shared_default.id
+  ]
 }
 
 # --- ROUTE TABLES ---
