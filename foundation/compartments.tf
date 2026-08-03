@@ -1,16 +1,17 @@
 locals {
-  tags_foundation = {
-    "projeto"      = "sas-foundation-infra"
-    "dominio"      = "tecnologia"                     
-    "contexto"     = "indireto"
-    "sub-contexto" = "infraestrutura"
-    "uc"           = "0186"                           # Combinei uc_pop e uc_pgto
-    "vertical"     = "infraestrutura e operacoes"     
-    "sub-area"     = "div infra e telecomunicacoes"  
-    "head"         = "marcelo-fonseca"
-    "manager"      = "paulo-casal"
-    "ambiente"     = "82"
-    # Total cravado: 10 tags!
+  tags_foundation_defined = {
+    "finops.projeto"      = "sas-foundation-infra"
+    "finops.dominio"      = "tecnologia"                     
+    "finops.contexto"     = "indireto"
+    "finops.sub-contexto" = "infraestrutura"
+    "finops.uc_pop"       = "0186"
+    "finops.uc_pgto"      = "0186"
+    "finops.vertical"     = "infraestrutura e operacoes"     
+    "finops.sub-area"     = "div infra e telecomunicacoes"  
+    "finops.head"         = "marcelo-fonseca"
+    "finops.manager"      = "paulo-casal"
+    "finops.owner"        = "leonardo-muniz"
+    "finops.ambiente"     = "82"
   }
 }
 
@@ -22,7 +23,7 @@ resource "oci_identity_compartment" "foundation_infra" {
   compartment_id = var.tenancy_ocid
   name           = "foundation-infra"
   description    = "Comparment onde serão organizados os recursos de infraestrutura"
-  freeform_tags  = local.tags_foundation
+  defined_tags   = local.tags_foundation_defined
   lifecycle {
     ignore_changes = [defined_tags]
   }
@@ -55,7 +56,7 @@ resource "oci_identity_compartment" "network" {
   compartment_id = oci_identity_compartment.foundation_infra.id
   name           = "network"
   description    = "Comparment onde serão organizados os recursos de network"
-  freeform_tags  = local.tags_foundation
+  defined_tags   = local.tags_foundation_defined
   lifecycle {
     ignore_changes = [defined_tags]
   }
@@ -65,7 +66,7 @@ resource "oci_identity_compartment" "security" {
   compartment_id = oci_identity_compartment.foundation_infra.id
   name           = "security"
   description    = "Comparment onde serão organizados os recursos de segurança"
-  freeform_tags  = local.tags_foundation
+  defined_tags   = local.tags_foundation_defined
   lifecycle {
     ignore_changes = [defined_tags]
   }
@@ -75,7 +76,7 @@ resource "oci_identity_compartment" "shared" {
   compartment_id = oci_identity_compartment.foundation_infra.id
   name           = "shared"
   description    = "Comparment onde serão organizados os recursos compartilhados"
-  freeform_tags  = local.tags_foundation
+  defined_tags   = local.tags_foundation_defined
   lifecycle {
     ignore_changes = [defined_tags]
   }
