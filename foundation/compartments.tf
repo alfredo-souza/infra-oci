@@ -1,13 +1,13 @@
 locals {
   tags_foundation = {
     "projeto"      = "sas-foundation-infra"
-    "domínio"      = "tecnologia"
+    "dominio"      = "tecnologia"                     
     "contexto"     = "indireto"
     "sub-contexto" = "infraestrutura"
     "uc_pop"       = "0186"
     "uc_pgto"      = "0186"
-    "vertical"     = "infraestrutura e operações"
-    "sub-area"     = "div infra e telecomunicações"
+    "vertical"     = "infraestrutura e operacoes"     
+    "sub-area"     = "div infra e telecomunicacoes"  
     "head"         = "marcelo-fonseca"
     "manager"      = "paulo-casal"
     "owner"        = "leonardo-muniz"
