@@ -23,7 +23,19 @@ resource "oci_identity_compartment" "foundation_infra" {
   compartment_id = var.tenancy_ocid
   name           = "foundation-infra"
   description    = "Comparment onde serão organizados os recursos de infraestrutura"
-  defined_tags   = local.tags_foundation_defined
+  # 1. Aplica as suas novas tags de FinOps
+  defined_tags   = local.tags_foundation_defined 
+  
+  # 2. Força a exclusão de qualquer freeform_tag que exista lá na nuvem
+  freeform_tags  = {}
+  
+  # 3. Blinda EXATAMENTE as tags da Oracle para que o Terraform não as apague
+  lifecycle {
+    ignore_changes = [
+      defined_tags["Oracle-Tags.CreatedBy"],
+      defined_tags["Oracle-Tags.CreatedOn"]
+    ]
+  }
 }
 
 resource "oci_identity_compartment" "workload" {
