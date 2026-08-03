@@ -65,9 +65,18 @@ resource "oci_identity_compartment" "network" {
   compartment_id = oci_identity_compartment.foundation_infra.id
   name           = "network"
   description    = "Comparment onde serão organizados os recursos de network"
-  defined_tags   = local.tags_foundation_defined
+  # 1. Aplica as suas novas tags de FinOps
+  defined_tags   = local.tags_foundation_defined 
+  
+  # 2. Força a exclusão de qualquer freeform_tag que exista lá na nuvem
+  freeform_tags  = {}
+  
+  # 3. Blinda EXATAMENTE as tags da Oracle para que o Terraform não as apague
   lifecycle {
-    ignore_changes = [defined_tags]
+    ignore_changes = [
+      defined_tags["Oracle-Tags.CreatedBy"],
+      defined_tags["Oracle-Tags.CreatedOn"]
+    ]
   }
 }
 
@@ -75,9 +84,18 @@ resource "oci_identity_compartment" "security" {
   compartment_id = oci_identity_compartment.foundation_infra.id
   name           = "security"
   description    = "Comparment onde serão organizados os recursos de segurança"
-  defined_tags   = local.tags_foundation_defined
+  # 1. Aplica as suas novas tags de FinOps
+  defined_tags   = local.tags_foundation_defined 
+  
+  # 2. Força a exclusão de qualquer freeform_tag que exista lá na nuvem
+  freeform_tags  = {}
+  
+  # 3. Blinda EXATAMENTE as tags da Oracle para que o Terraform não as apague
   lifecycle {
-    ignore_changes = [defined_tags]
+    ignore_changes = [
+      defined_tags["Oracle-Tags.CreatedBy"],
+      defined_tags["Oracle-Tags.CreatedOn"]
+    ]
   }
 }
 
@@ -85,9 +103,18 @@ resource "oci_identity_compartment" "shared" {
   compartment_id = oci_identity_compartment.foundation_infra.id
   name           = "shared"
   description    = "Comparment onde serão organizados os recursos compartilhados"
-  defined_tags   = local.tags_foundation_defined
+  # 1. Aplica as suas novas tags de FinOps
+  defined_tags   = local.tags_foundation_defined 
+  
+  # 2. Força a exclusão de qualquer freeform_tag que exista lá na nuvem
+  freeform_tags  = {}
+  
+  # 3. Blinda EXATAMENTE as tags da Oracle para que o Terraform não as apague
   lifecycle {
-    ignore_changes = [defined_tags]
+    ignore_changes = [
+      defined_tags["Oracle-Tags.CreatedBy"],
+      defined_tags["Oracle-Tags.CreatedOn"]
+    ]
   }
 }
 
