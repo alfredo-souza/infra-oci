@@ -4,14 +4,13 @@ locals {
     "dominio"      = "tecnologia"                     
     "contexto"     = "indireto"
     "sub-contexto" = "infraestrutura"
-    "uc_pop"       = "0186"
-    "uc_pgto"      = "0186"
+    "uc"           = "0186"                           # Combinei uc_pop e uc_pgto
     "vertical"     = "infraestrutura e operacoes"     
     "sub-area"     = "div infra e telecomunicacoes"  
     "head"         = "marcelo-fonseca"
     "manager"      = "paulo-casal"
-    "owner"        = "leonardo-muniz"
     "ambiente"     = "82"
+    # Total cravado: 10 tags!
   }
 }
 
