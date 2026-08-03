@@ -24,9 +24,6 @@ resource "oci_identity_compartment" "foundation_infra" {
   name           = "foundation-infra"
   description    = "Comparment onde serão organizados os recursos de infraestrutura"
   defined_tags   = local.tags_foundation_defined
-  lifecycle {
-    ignore_changes = [defined_tags]
-  }
 }
 
 resource "oci_identity_compartment" "workload" {
