@@ -250,3 +250,11 @@ import {
   to = oci_core_security_list.shared_default 
   id = "ocid1.securitylist.oc1.sa-vinhedo-1.aaaaaaaakli5li56zdyunb37ny7mu3fv7h7mbcg6lcv6b5vncsianowzig5q"
 }
+
+# ==========================================
+# IMPORTAÇÃO: STORAGE (BUCKETS)
+# ==========================================
+import {
+  to = oci_objectstorage_bucket.rhel_image
+  id = "n/axybenm6d4ev/b/rhel-image"
+}
