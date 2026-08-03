@@ -10,4 +10,5 @@ provider "oci" {
   fingerprint  = var.fingerprint
   private_key  = var.private_key
   region       = var.region
+  ignore_defined_tags = ["Oracle-Tags.CreatedBy", "Oracle-Tags.CreatedOn"]
 }
