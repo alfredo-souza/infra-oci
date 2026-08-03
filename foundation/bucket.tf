@@ -41,6 +41,7 @@ resource "oci_objectstorage_bucket" "storage_commvault" {
   is_bucket_key_enabled = false
   metadata              = {}
   name                  = "storage-commvault-sas"
+  namespace             = "axybenm6d4ev"
   object_events_enabled = false
   storage_tier          = "Standard"
   versioning            = "Disabled"
@@ -50,7 +51,6 @@ resource "oci_objectstorage_bucket" "storage_commvault" {
     ignore_changes = [
       defined_tags,
       freeform_tags,
-      namespace
     ]
   }
 }
