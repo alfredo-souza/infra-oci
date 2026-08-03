@@ -24,18 +24,27 @@ resource "oci_identity_compartment" "foundation_infra" {
   name           = "foundation-infra"
   description    = "Comparment onde serão organizados os recursos de infraestrutura"
   freeform_tags  = local.tags_foundation
+  lifecycle {
+    ignore_changes = [defined_tags]
+  }
 }
 
 resource "oci_identity_compartment" "workload" {
   compartment_id = var.tenancy_ocid
   name           = "workload"
   description    = "Comparment onde serão organizados os recursos aplicacionais"
+  lifecycle {
+    ignore_changes = [defined_tags]
+  }
 }
 
 resource "oci_identity_compartment" "sas_database" {
   compartment_id = var.tenancy_ocid
   name           = "SAS_Database"
   description    = "Compartimento de Banco de Dados"
+  lifecycle {
+    ignore_changes = [defined_tags]
+  }
 }
 
 # ==========================================
@@ -48,6 +57,9 @@ resource "oci_identity_compartment" "network" {
   name           = "network"
   description    = "Comparment onde serão organizados os recursos de network"
   freeform_tags  = local.tags_foundation
+  lifecycle {
+    ignore_changes = [defined_tags]
+  }
 }
 
 resource "oci_identity_compartment" "security" {
@@ -55,6 +67,9 @@ resource "oci_identity_compartment" "security" {
   name           = "security"
   description    = "Comparment onde serão organizados os recursos de segurança"
   freeform_tags  = local.tags_foundation
+  lifecycle {
+    ignore_changes = [defined_tags]
+  }
 }
 
 resource "oci_identity_compartment" "shared" {
@@ -62,6 +77,9 @@ resource "oci_identity_compartment" "shared" {
   name           = "shared"
   description    = "Comparment onde serão organizados os recursos compartilhados"
   freeform_tags  = local.tags_foundation
+  lifecycle {
+    ignore_changes = [defined_tags]
+  }
 }
 
 # Filhos de workload
@@ -69,34 +87,52 @@ resource "oci_identity_compartment" "sas_exadata_prd" {
   compartment_id = oci_identity_compartment.workload.id
   name           = "sas-exadata-prd"
   description    = "Comparment onde serão organizados os recursos aplicacionais do exadata"
+  lifecycle {
+    ignore_changes = [defined_tags]
+  }
 }
 
 resource "oci_identity_compartment" "sas_exadata_stg" {
   compartment_id = oci_identity_compartment.workload.id
   name           = "sas-exadata-stg"
   description    = "Comparment onde serão organizados os recursos aplicacionais do exadata de stage"
+  lifecycle {
+    ignore_changes = [defined_tags]
+  }
 }
 
 resource "oci_identity_compartment" "sas_peoplesoft_prd" {
   compartment_id = oci_identity_compartment.workload.id
   name           = "sas-peoplesoft-prd"
   description    = "Comparment onde serão organizados os recursos aplicacionais do peoplesoft de produção"
+  lifecycle {
+    ignore_changes = [defined_tags]
+  }
 }
 
 resource "oci_identity_compartment" "sas_peoplesoft_hml" {
   compartment_id = oci_identity_compartment.workload.id
   name           = "sas-peoplesoft-hml"
   description    = "Comparment onde serão organizados os recursos aplicacionais do peoplesoft de homologação"
+  lifecycle {
+    ignore_changes = [defined_tags]
+  }
 }
 
 resource "oci_identity_compartment" "sas_peoplesoft_dsv" {
   compartment_id = oci_identity_compartment.workload.id
   name           = "sas-peoplesoft-dsv"
   description    = "Comparment onde serão organizados os recursos aplicacionais do peoplesoft de desenvolvimento"
+  lifecycle {
+    ignore_changes = [defined_tags]
+  }
 }
 
 resource "oci_identity_compartment" "sas_peoplesoft_dmo" {
   compartment_id = oci_identity_compartment.workload.id
   name           = "sas-peoplesoft-dmo"
   description    = "Comparment onde serão organizados os recursos aplicacionais do peoplesoft de DMO"
+  lifecycle {
+    ignore_changes = [defined_tags]
+  }
 }
