@@ -27,3 +27,30 @@ resource "oci_objectstorage_bucket" "rhel_image" {
     ]
   }
 }
+
+
+resource "oci_objectstorage_bucket" "storage_commvault" {
+  access_type           = "NoPublicAccess"
+  auto_tiering          = "Disabled"
+  bucket_scope          = "NAMESPACE"
+  
+  # Utilizando a referência do compartimento importado ao invés do OCID hardcoded
+  compartment_id        = oci_identity_compartment.shared.id
+  
+  freeform_tags         = {}
+  is_bucket_key_enabled = false
+  metadata              = {}
+  name                  = "storage-commvault-sas"
+  object_events_enabled = false
+  storage_tier          = "Standard"
+  versioning            = "Disabled"
+
+  # Flag para ignorar as tags caso elas sejam alteradas via Console
+  lifecycle {
+    ignore_changes = [
+      defined_tags,
+      freeform_tags,
+      namespace
+    ]
+  }
+}
