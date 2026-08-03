@@ -85,3 +85,22 @@ output "security_lists" {
     shared_priv      = oci_core_security_list.shared_priv.id
   }
 }
+
+# ==========================================
+# OUTPUTS: STORAGE
+# ==========================================
+
+output "bucket_rhel_image_name" {
+  description = "Nome do bucket de imagens RHEL"
+  value       = oci_objectstorage_bucket.rhel_image.name
+}
+
+output "bucket_rhel_image_namespace" {
+  description = "Namespace do bucket de imagens RHEL"
+  value       = oci_objectstorage_bucket.rhel_image.namespace
+}
+
+output "bucket_rhel_image_id" {
+  description = "ID do bucket na OCI"
+  value       = oci_objectstorage_bucket.rhel_image.id
+}
