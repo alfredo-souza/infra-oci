@@ -25,7 +25,7 @@ resource "oci_identity_compartment" "foundation_infra" {
   description    = "Comparment onde serão organizados os recursos de infraestrutura"
   freeform_tags  = local.tags_foundation
   lifecycle {
-    ignore_changes = [defined_tags]
+    ignore_defined_tags = ["Oracle-Tags.CreatedBy", "Oracle-Tags.CreatedOn"]
   }
 }
 
@@ -34,7 +34,7 @@ resource "oci_identity_compartment" "workload" {
   name           = "workload"
   description    = "Comparment onde serão organizados os recursos aplicacionais"
   lifecycle {
-    ignore_changes = [defined_tags]
+    ignore_defined_tags = ["Oracle-Tags.CreatedBy", "Oracle-Tags.CreatedOn"]
   }
 }
 
@@ -43,7 +43,7 @@ resource "oci_identity_compartment" "sas_database" {
   name           = "SAS_Database"
   description    = "Compartimento de Banco de Dados"
   lifecycle {
-    ignore_changes = [defined_tags]
+    ignore_defined_tags = ["Oracle-Tags.CreatedBy", "Oracle-Tags.CreatedOn"]
   }
 }
 
@@ -58,7 +58,7 @@ resource "oci_identity_compartment" "network" {
   description    = "Comparment onde serão organizados os recursos de network"
   freeform_tags  = local.tags_foundation
   lifecycle {
-    ignore_changes = [defined_tags]
+    ignore_defined_tags = ["Oracle-Tags.CreatedBy", "Oracle-Tags.CreatedOn"]
   }
 }
 
@@ -68,7 +68,7 @@ resource "oci_identity_compartment" "security" {
   description    = "Comparment onde serão organizados os recursos de segurança"
   freeform_tags  = local.tags_foundation
   lifecycle {
-    ignore_changes = [defined_tags]
+    ignore_defined_tags = ["Oracle-Tags.CreatedBy", "Oracle-Tags.CreatedOn"]
   }
 }
 
@@ -78,7 +78,7 @@ resource "oci_identity_compartment" "shared" {
   description    = "Comparment onde serão organizados os recursos compartilhados"
   freeform_tags  = local.tags_foundation
   lifecycle {
-    ignore_changes = [defined_tags]
+    ignore_defined_tags = ["Oracle-Tags.CreatedBy", "Oracle-Tags.CreatedOn"]
   }
 }
 
@@ -88,7 +88,7 @@ resource "oci_identity_compartment" "sas_exadata_prd" {
   name           = "sas-exadata-prd"
   description    = "Comparment onde serão organizados os recursos aplicacionais do exadata"
   lifecycle {
-    ignore_changes = [defined_tags]
+    ignore_defined_tags = ["Oracle-Tags.CreatedBy", "Oracle-Tags.CreatedOn"]
   }
 }
 
@@ -97,7 +97,7 @@ resource "oci_identity_compartment" "sas_exadata_stg" {
   name           = "sas-exadata-stg"
   description    = "Comparment onde serão organizados os recursos aplicacionais do exadata de stage"
   lifecycle {
-    ignore_changes = [defined_tags]
+    ignore_defined_tags = ["Oracle-Tags.CreatedBy", "Oracle-Tags.CreatedOn"]
   }
 }
 
@@ -106,7 +106,7 @@ resource "oci_identity_compartment" "sas_peoplesoft_prd" {
   name           = "sas-peoplesoft-prd"
   description    = "Comparment onde serão organizados os recursos aplicacionais do peoplesoft de produção"
   lifecycle {
-    ignore_changes = [defined_tags]
+    ignore_defined_tags = ["Oracle-Tags.CreatedBy", "Oracle-Tags.CreatedOn"]
   }
 }
 
@@ -115,7 +115,7 @@ resource "oci_identity_compartment" "sas_peoplesoft_hml" {
   name           = "sas-peoplesoft-hml"
   description    = "Comparment onde serão organizados os recursos aplicacionais do peoplesoft de homologação"
   lifecycle {
-    ignore_changes = [defined_tags]
+    ignore_defined_tags = ["Oracle-Tags.CreatedBy", "Oracle-Tags.CreatedOn"]
   }
 }
 
@@ -124,7 +124,7 @@ resource "oci_identity_compartment" "sas_peoplesoft_dsv" {
   name           = "sas-peoplesoft-dsv"
   description    = "Comparment onde serão organizados os recursos aplicacionais do peoplesoft de desenvolvimento"
   lifecycle {
-    ignore_changes = [defined_tags]
+    ignore_defined_tags = ["Oracle-Tags.CreatedBy", "Oracle-Tags.CreatedOn"]
   }
 }
 
@@ -133,6 +133,6 @@ resource "oci_identity_compartment" "sas_peoplesoft_dmo" {
   name           = "sas-peoplesoft-dmo"
   description    = "Comparment onde serão organizados os recursos aplicacionais do peoplesoft de DMO"
   lifecycle {
-    ignore_changes = [defined_tags]
+    ignore_defined_tags = ["Oracle-Tags.CreatedBy", "Oracle-Tags.CreatedOn"]
   }
 }
