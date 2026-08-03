@@ -90,17 +90,20 @@ output "security_lists" {
 # OUTPUTS: STORAGE
 # ==========================================
 
-output "bucket_rhel_image_name" {
-  description = "Nome do bucket de imagens RHEL"
-  value       = oci_objectstorage_bucket.rhel_image.name
+output "buckets_name" {
+  description = "Nome dos buckets na OCI"
+  value       = {
+    rhel-imagem = oci_objectstorage_bucket.rhel_image.name
+    storage_commvault = oci_objectstorage_bucket.storage_commvault.name
+  }
 }
 
-output "bucket_rhel_image_namespace" {
-  description = "Namespace do bucket de imagens RHEL"
-  value       = oci_objectstorage_bucket.rhel_image.namespace
+output "buckets_id" {
+  description = "ID dos buckets na OCI"
+  value       = {
+    rhel-image = oci_objectstorage_bucket.rhel_image.id
+    storage_commvault = oci_objectstorage_bucket.storage_commvault.id
+  }
 }
 
-output "bucket_rhel_image_id" {
-  description = "ID do bucket na OCI"
-  value       = oci_objectstorage_bucket.rhel_image.id
-}
+
