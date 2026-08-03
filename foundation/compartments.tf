@@ -1,3 +1,21 @@
+locals {
+  tags_foundation = {
+    "projeto"      = "sas-foundation-infra"
+    "domínio"      = "tecnologia"
+    "contexto"     = "indireto"
+    "sub-contexto" = "infraestrutura"
+    "uc_pop"       = "0186"
+    "uc_pgto"      = "0186"
+    "vertical"     = "infraestrutura e operações"
+    "sub-area"     = "div infra e telecomunicações"
+    "head"         = "marcelo-fonseca"
+    "manager"      = "paulo-casal"
+    "owner"        = "leonardo-muniz"
+    "ambiente"     = "82"
+  }
+}
+
+
 # ==========================================
 # COMPARTIMENTOS ROOT (Nível da Tenancy)
 # ==========================================
@@ -5,6 +23,7 @@ resource "oci_identity_compartment" "foundation_infra" {
   compartment_id = var.tenancy_ocid
   name           = "foundation-infra"
   description    = "Comparment onde serão organizados os recursos de infraestrutura"
+  freeform_tags  = local.tags_foundation
 }
 
 resource "oci_identity_compartment" "workload" {
@@ -28,18 +47,21 @@ resource "oci_identity_compartment" "network" {
   compartment_id = oci_identity_compartment.foundation_infra.id
   name           = "network"
   description    = "Comparment onde serão organizados os recursos de network"
+  freeform_tags  = local.tags_foundation
 }
 
 resource "oci_identity_compartment" "security" {
   compartment_id = oci_identity_compartment.foundation_infra.id
   name           = "security"
   description    = "Comparment onde serão organizados os recursos de segurança"
+  freeform_tags  = local.tags_foundation
 }
 
 resource "oci_identity_compartment" "shared" {
   compartment_id = oci_identity_compartment.foundation_infra.id
   name           = "shared"
   description    = "Comparment onde serão organizados os recursos compartilhados"
+  freeform_tags  = local.tags_foundation
 }
 
 # Filhos de workload
