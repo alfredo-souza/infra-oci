@@ -35,7 +35,7 @@ resource "oci_objectstorage_bucket" "storage_commvault" {
   bucket_scope          = "NAMESPACE"
   
   # Utilizando a referência do compartimento importado ao invés do OCID hardcoded
-  compartment_id        = oci_identity_compartment.shared.id
+  compartment_id        = oci_identity_compartment.backup.id
   
   freeform_tags         = {}
   is_bucket_key_enabled = false

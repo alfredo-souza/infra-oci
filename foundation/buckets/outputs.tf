@@ -8,7 +8,8 @@ output "compartments" {
     
     # Filhos
     network             = oci_identity_compartment.network.id
-    security            = oci_identity_compartment.security.id
+#    security            = oci_identity_compartment.security.id
+    backup              = oci_identity_compartment.backup.id
     shared              = oci_identity_compartment.shared.id
     sas_exadata_prd     = oci_identity_compartment.sas_exadata_prd.id
     sas_exadata_stg     = oci_identity_compartment.sas_exadata_stg.id

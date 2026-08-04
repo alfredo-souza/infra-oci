@@ -80,10 +80,10 @@ resource "oci_identity_compartment" "network" {
   }
 }
 
-resource "oci_identity_compartment" "security" {
+resource "oci_identity_compartment" "backup" {
   compartment_id = oci_identity_compartment.foundation_infra.id
-  name           = "security"
-  description    = "Comparment onde serão organizados os recursos de segurança"
+  name           = "backup"
+  description    = "Comparment onde serão organizados os recursos de backup"
   # 1. Aplica as suas novas tags de FinOps
   defined_tags   = local.tags_foundation_defined 
   
